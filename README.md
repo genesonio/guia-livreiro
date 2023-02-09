@@ -1,7 +1,5 @@
 # Guia Livreiro
 
-##
-
 Permite vendedores(as) procurarem livros de maneira rápida para auxiliar nas vendas
 
 ## Features implementadas
