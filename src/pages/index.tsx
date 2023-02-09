@@ -1,7 +1,30 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import Adsense from "../components/ad";
+
 const Home: NextPage = () => {
+  const [search, setSearch] = useState("");
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    function isMobile() {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    }
+    setMobile(isMobile());
+  }, [mobile]);
+
+  const router = useRouter();
+  const handleSearch = (key: string) => {
+    if (key === "Enter") {
+      void router.push(`/search/${search}`);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -15,11 +38,11 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <main className="flex h-[100vh] w-[100vw] items-center  justify-evenly bg-[#C4C4C4] bg-[url('../../public/papertexture.png')] bg-cover bg-no-repeat">
-        <div className="h-[30rem] w-[9rem] bg-slate-500"></div>
-        <div className="flex h-[78.125%] w-[78.125%] flex-col items-center justify-evenly ">
+      <main className="my-auto flex items-center justify-between px-1 max-sm:flex-col max-sm:gap-4">
+        <Adsense />
+        <div className="flex h-[70vh] w-[78.125vw] flex-col items-center justify-between max-sm:w-[90vw]">
           <div className="flex flex-col items-center">
-            <div className="relative h-[6rem] w-[6rem]">
+            <div className="relative h-[6rem] w-[6rem] max-md:h-[4rem] max-md:w-[4rem]">
               <Image
                 src="/logo.svg"
                 alt="logo"
@@ -29,27 +52,38 @@ const Home: NextPage = () => {
             </div>
             <h1
               style={{ fontFamily: "Arvo" }}
-              className="text-center text-7xl text-[#272727] drop-shadow-custom"
+              className="text-center text-7xl text-[#272727] drop-shadow-custom max-md:text-5xl"
             >
               Guia<strong>Livreiro</strong>
             </h1>
           </div>
 
-          <div className="flex w-[20rem] items-center justify-center">
+          <div className="flex w-[20rem] flex-col items-center justify-center">
             <Image
               alt=""
               src="/search.svg"
               width={16}
               height={16}
-              className="absolute mr-[285px]"
+              className="absolute mr-[285px] max-sm:mb-[50px]"
             />
             <input
               type="text"
-              className="w-full rounded-2xl border-2 border-[#272727] bg-transparent px-2 py-1 pl-8 outline-none placeholder:text-[#666]"
+              className="w-full rounded-2xl border-2 border-[#272727] bg-transparent py-1 px-8 outline-none placeholder:text-center placeholder:text-[#666]"
               placeholder="Procure o nome do livro"
+              value={search}
+              onChange={({ target }) => setSearch(target.value)}
+              onKeyDown={({ key }) => handleSearch(key)}
             />
+            {mobile && (
+              <button
+                className="mt-2 rounded-full border-2 border-[#272727] p-2"
+                onClick={() => handleSearch("Enter")}
+              >
+                Procurar
+              </button>
+            )}
           </div>
-          <p className="w-2/3 text-center italic text-[#272727] drop-shadow-custom">
+          <p className="w-2/3 text-center italic text-[#272727] drop-shadow-custom max-sm:w-full">
             Bem-vindo ao nosso site de informações sobre livros! Aqui,
             oferecemos informações precisas e atualizadas sobre títulos, autores
             e sinopses para ajudar na escolha de livros para venda. Realize suas
@@ -58,7 +92,7 @@ const Home: NextPage = () => {
             de livros agora mesmo.
           </p>
         </div>
-        <div className="h-[30rem] w-[9rem] bg-slate-500"></div>
+        <Adsense />
       </main>
     </>
   );
