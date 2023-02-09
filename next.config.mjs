@@ -9,6 +9,14 @@
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http",
+        hostname: "books.google.com",
+      },
+    ],
+  },
 
   /**
    * If you have the "experimental: { appDir: true }" setting enabled, then you
