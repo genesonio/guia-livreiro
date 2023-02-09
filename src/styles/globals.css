@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  #__next {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #c4c4c4;
+    background-image: url("../../public/papertexture.png");
+  }
+}
