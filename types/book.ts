@@ -1,4 +1,5 @@
 interface book {
+  id: string
   selfLink: string
   volumeInfo: bookInf
 }
@@ -15,4 +16,4 @@ interface links {
   thumbnail: string
 }
 
-export default book
+export type { book, bookInf }
