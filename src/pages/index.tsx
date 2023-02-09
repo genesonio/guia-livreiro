@@ -15,30 +15,41 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <main className="flex h-[100vh] w-[100vw] items-center justify-center gap-5 bg-[#272727] p-5">
+      <main className="flex h-[100vh] w-[100vw] items-center  justify-evenly bg-[#C4C4C4] bg-[url('../../public/papertexture.png')] bg-cover bg-no-repeat">
         <div className="h-[30rem] w-[9rem] bg-slate-500"></div>
-        <div className="flex h-[78.125%] w-[78.125%] flex-col items-center  justify-evenly bg-[#C4C4C4] bg-[url('../../public/papertexture.png')] bg-cover">
-          <h1
-            style={{ fontFamily: "Arvo" }}
-            className="text-center text-5xl text-[#272727]"
-          >
-            Guia<strong>Livreiro</strong>
-          </h1>
-          <div className="flex w-1/4 items-center">
+        <div className="flex h-[78.125%] w-[78.125%] flex-col items-center justify-evenly ">
+          <div className="flex flex-col items-center">
+            <div className="relative h-[6rem] w-[6rem]">
+              <Image
+                src="/logo.svg"
+                alt="logo"
+                fill
+                className="object-cover drop-shadow-custom"
+              />
+            </div>
+            <h1
+              style={{ fontFamily: "Arvo" }}
+              className="text-center text-7xl text-[#272727] drop-shadow-custom"
+            >
+              Guia<strong>Livreiro</strong>
+            </h1>
+          </div>
+
+          <div className="flex w-[20rem] items-center justify-center">
             <Image
               alt=""
               src="/search.svg"
-              width={15}
-              height={15}
-              className="absolute ml-3"
+              width={16}
+              height={16}
+              className="absolute mr-[285px]"
             />
             <input
               type="text"
-              className="rounded-2xl border-2 border-[#272727] bg-transparent px-2 py-1 pl-8 outline-none placeholder:text-[#666]"
+              className="w-full rounded-2xl border-2 border-[#272727] bg-transparent px-2 py-1 pl-8 outline-none placeholder:text-[#666]"
               placeholder="Procure o nome do livro"
             />
           </div>
-          <p className="w-2/3 text-center text-[#272727]">
+          <p className="w-2/3 text-center italic text-[#272727] drop-shadow-custom">
             Bem-vindo ao nosso site de informações sobre livros! Aqui,
             oferecemos informações precisas e atualizadas sobre títulos, autores
             e sinopses para ajudar na escolha de livros para venda. Realize suas
