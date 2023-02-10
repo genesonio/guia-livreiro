@@ -1,4 +1,5 @@
 import { Grid, Text, TextInput, ActionIcon } from '@mantine/core'
+import { IconSearch } from '@tabler/icons'
 
 import Logo from '@/assets/logo.svg'
 
@@ -14,7 +15,15 @@ function HomePage() {
                 <Text component="h1">
                     Guia<strong>Livreiro</strong>
                 </Text>
-                <TextInput placeholder="Procure o nome do livro" rightSection={<ActionIcon>oi</ActionIcon>} />
+
+                <TextInput
+                    placeholder="Procure o nome do livro"
+                    rightSection={
+                        <ActionIcon>
+                            <IconSearch size={20} />
+                        </ActionIcon>
+                    }
+                />
             </Grid.Col>
         </Grid>
     )
