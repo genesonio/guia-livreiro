@@ -42,6 +42,9 @@ function HomePage() {
                                     className={classes.input}
                                     placeholder="Procure o nome do livro"
                                     radius="lg"
+                                    onKeyDown={({ key }) => {
+                                        if (key === 'Enter') handleClick()
+                                    }}
                                     onChange={(e) => handleChange(e)}
                                     value={search}
                                     rightSection={
