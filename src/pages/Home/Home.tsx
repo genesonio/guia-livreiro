@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { Grid, Text, TextInput, ActionIcon, Center, BackgroundImage, MediaQuery } from '@mantine/core'
+import { Grid, Text, TextInput, ActionIcon, Center, BackgroundImage } from '@mantine/core'
 import { IconSearch } from '@tabler/icons'
 
 import Logo from '@/assets/logo.svg'
@@ -26,35 +26,29 @@ function HomePage() {
             <Grid className={classes.grid}>
                 <Grid.Col span={12} className={classes.column}>
                     <Center className={classes.container}>
-                        <MediaQuery
-                            query="(max-width: 1200px) and (min-width: 300px)"
-                            styles={() => ({
-                                fontSize: '1rem',
-                            })}>
-                            <>
-                                <div className={classes.glass} />
-                                <img src={Logo} alt="logo picture" className={classes.logo} />
-                                <Text ta="center" className={classes.title}>
-                                    Guia<strong>Livreiro</strong>
-                                </Text>
+                        <>
+                            <div className={classes.glass} />
+                            <img src={Logo} alt="logo picture" className={classes.logo} />
+                            <Text ta="center" className={classes.title}>
+                                Guia<strong>Livreiro</strong>
+                            </Text>
 
-                                <TextInput
-                                    className={classes.input}
-                                    placeholder="Procure o nome do livro"
-                                    radius="lg"
-                                    onKeyDown={({ key }) => {
-                                        if (key === 'Enter') handleClick()
-                                    }}
-                                    onChange={(e) => handleChange(e)}
-                                    value={search}
-                                    rightSection={
-                                        <ActionIcon onClick={() => handleClick()}>
-                                            <IconSearch size={20} />
-                                        </ActionIcon>
-                                    }
-                                />
-                            </>
-                        </MediaQuery>
+                            <TextInput
+                                className={classes.input}
+                                placeholder="Procure o nome do livro"
+                                radius="lg"
+                                onKeyDown={({ key }) => {
+                                    if (key === 'Enter') handleClick()
+                                }}
+                                onChange={(e) => handleChange(e)}
+                                value={search}
+                                rightSection={
+                                    <ActionIcon onClick={() => handleClick()}>
+                                        <IconSearch size={20} />
+                                    </ActionIcon>
+                                }
+                            />
+                        </>
                     </Center>
                 </Grid.Col>
             </Grid>
