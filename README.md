@@ -4,9 +4,7 @@ Permite vendedores(as) procurarem livros de maneira rápida para auxiliar nas ve
 
 ## Features implementadas
 
-- Procura de livros na página principal
-- Procura de livros no header enquanto está na página de resultados
-- Página de resultados
+- Página principal
 
 ### Implementando
 
