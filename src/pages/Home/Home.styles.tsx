@@ -31,7 +31,7 @@ const useStyles = createStyles(() => ({
     },
     glass: {
         height: '85vh',
-        width: '70vw',
+        width: '75vw',
         position: 'fixed',
         margin: 'auto',
         borderRadius: '2rem',
