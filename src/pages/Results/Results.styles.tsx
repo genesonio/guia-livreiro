@@ -2,17 +2,12 @@ import { createStyles } from '@mantine/core'
 
 const useStyles = createStyles(() => ({
     glass: {
-        height: '85vh',
-        width: '70vw',
-        position: 'fixed',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
+        height: '100%',
+        width: '100%',
         margin: 'auto',
         borderRadius: '2rem',
-        zIndex: 0,
 
-        padding: '0.5rem',
+        padding: '1rem',
 
         background: 'rgba(255, 255, 255, 0.1)',
         boxShadow: 'rgba(0, 0, 0, 0.56) 0px 22px 70px 4px',
@@ -22,13 +17,28 @@ const useStyles = createStyles(() => ({
         border: '1px solid rgba(255, 255, 255, 0.1)',
     },
     book: {
-        zIndex: 1,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        height: '40vh',
-
-        border: '1px solid black',
+        height: '45vh',
+        textAlign: 'center',
+    },
+    grid: {
+        width: '75vw',
+        margin: 'auto',
+    },
+    cover: {
+        width: '60%',
+    },
+    title: {
+        fontSize: '1rem',
+    },
+    background: {
+        minHeight: '100vh',
+        height: '100%',
+    },
+    author: {
+        fontSize: '.9rem',
     },
 }))
 
