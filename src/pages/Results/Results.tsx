@@ -9,6 +9,7 @@ import bookCover from '@/assets/bookimage.png'
 import loading from '@/assets/loading.svg'
 
 import useStyles from './Results.styles'
+import { Header } from '@/components/header'
 
 function ResultsPage() {
     const location = useLocation()
@@ -27,9 +28,10 @@ function ResultsPage() {
         <BackgroundImage
             className={classes.background}
             src="https://static-cse.canva.com/blob/921439/ImagebyStanislavKondratievviaUnsplash.35c0d8f7.avif">
+            <Header />
             <Grid className={classes.grid} columns={5}>
                 {isLoading ? (
-                    <Center style={{ width: '100vw', height: '100vh' }}>
+                    <Center style={{ width: '100%', height: '70vh' }}>
                         <img src={loading} alt="loading animation" />
                     </Center>
                 ) : (
