@@ -4,13 +4,14 @@ const useStyles = createStyles(() => ({
     header: {
         height: '120px',
         display: 'flex',
-        width: '73vw',
+        width: '75vw',
         margin: 'auto',
         justifyContent: 'space-between',
         alignItems: 'center',
     },
     logo: {
         width: '6rem',
+        cursor: 'pointer',
     },
     input: {
         width: '20%',
