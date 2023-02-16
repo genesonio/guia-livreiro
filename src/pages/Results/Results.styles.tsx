@@ -9,6 +9,8 @@ const useStyles = createStyles(() => ({
 
         padding: '1rem',
 
+        cursor: 'pointer',
+
         background: 'rgba(255, 255, 255, 0.1)',
         boxShadow: 'rgba(0, 0, 0, 0.56) 0px 22px 70px 4px',
         backdropFilter: 'blur(8px)',

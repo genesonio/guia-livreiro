@@ -1,10 +1,12 @@
 import { useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import useFetch from 'react-fetch-hook'
 
-import { BackgroundImage, Grid } from '@mantine/core'
+import { BackgroundImage, Center, Grid } from '@mantine/core'
 
 import { data } from '@/types/books'
 import bookCover from '@/assets/bookimage.png'
+import loading from '@/assets/loading.svg'
 
 import useStyles from './Results.styles'
 
@@ -12,22 +14,30 @@ function ResultsPage() {
     const location = useLocation()
     const search = location.pathname.slice(9)
     const { classes } = useStyles()
+    const navigate = useNavigate()
     const { isLoading, data }: { isLoading: boolean; data?: data | undefined } = useFetch(
-        `https://www.googleapis.com/books/v1/volumes?q=intitle:${search}&langRestrict=pt&printType=books&projection=full`
+        `https://www.googleapis.com/books/v1/volumes?q=intitle:${search}&langRestrict=pt&printType=books&projection=lite`
     )
+
+    const handleClick = (id: string) => {
+        navigate(`/book/${id}`)
+    }
 
     return (
         <BackgroundImage
             className={classes.background}
             src="https://static-cse.canva.com/blob/921439/ImagebyStanislavKondratievviaUnsplash.35c0d8f7.avif">
-            <Grid className={classes.grid}>
+            <Grid className={classes.grid} columns={5}>
                 {isLoading ? (
-                    <h1>Loading...</h1>
+                    <Center style={{ width: '100vw', height: '100vh' }}>
+                        <img src={loading} alt="loading animation" />
+                    </Center>
                 ) : (
-                    data?.items.map(({ volumeInfo: book }, index) => {
+                    data?.items.map((dataBook, index) => {
+                        const { volumeInfo: book } = dataBook
                         return (
-                            <Grid.Col key={index} className={classes.book} span={2}>
-                                <div className={classes.glass}>
+                            <Grid.Col key={index} className={classes.book} span={1}>
+                                <div className={classes.glass} onClick={() => handleClick(dataBook.id)}>
                                     {book.imageLinks ? (
                                         <img
                                             className={classes.cover}
