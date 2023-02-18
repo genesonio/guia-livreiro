@@ -14,7 +14,7 @@ function AppRoutes() {
                 <Route path="/" element={<Navigate to="/home" />} />
                 <Route path="/home" element={<HomePage />} />
                 <Route path="/results/:id" element={<ResultsPage />} />
-                <Route path="/book/:name" element={<BookPage />} />
+                <Route path="/book/:id" element={<BookPage />} />
             </Routes>
         </SuspenseLoader>
     )

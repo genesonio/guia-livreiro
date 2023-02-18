@@ -18,8 +18,7 @@ function BookPage() {
     const url = 'https://www.googleapis.com/books/v1/volumes/'
 
     const { isLoading, data }: { isLoading: boolean; data?: dataBook | undefined } = useFetch(url + id)
-    if (!data) return
-    const { volumeInfo: book } = data
+    const { volumeInfo: book } = data!
     return (
         <BackgroundImage
             className={classes.background}
