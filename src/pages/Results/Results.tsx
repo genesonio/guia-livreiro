@@ -7,9 +7,9 @@ import { BackgroundImage, Center, Grid } from '@mantine/core'
 import { data } from '@/types/books'
 import bookCover from '@/assets/bookimage.png'
 import loading from '@/assets/loading.svg'
+import { Header } from '@/components/header'
 
 import useStyles from './Results.styles'
-import { Header } from '@/components/header'
 
 function ResultsPage() {
     const location = useLocation()
