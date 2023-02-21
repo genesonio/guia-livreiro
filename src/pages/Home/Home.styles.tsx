@@ -1,14 +1,23 @@
 import { createStyles } from '@mantine/core'
 
 const useStyles = createStyles(() => ({
+    grid: {
+        margin: '0',
+        height: '100vh',
+    },
+    column: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     logo: {
-        width: 80,
-        height: 80,
+        width: '5rem',
+        height: '5rem',
         zIndex: 1,
     },
     title: {
         fontSize: '4rem',
-        color: '#272727',
+        color: '#cdc0b0',
         zIndex: 1,
         textShadow: '6px 4px 4px rgba(000, 000, 000, 0.25)',
     },
@@ -17,12 +26,11 @@ const useStyles = createStyles(() => ({
         zIndex: 1,
     },
     container: {
-        height: '98vh',
         flexDirection: 'column',
-        gap: '3rem',
+        gap: '8vh',
     },
     glass: {
-        height: '70vh',
+        height: '85vh',
         width: '70vw',
         position: 'fixed',
         margin: 'auto',
