@@ -18,6 +18,8 @@ type book = {
   description?: string
   pageCount?: number
   imageLinks?: links
+  publisher: string
+  categories: string[]
 }
 
 type links = {
