@@ -5,9 +5,10 @@ Permite vendedores(as) procurarem livros de maneira rápida para auxiliar nas ve
 ## Features implementadas
 
 - Página principal
+- Página de pesquisa
+- Página do livro
 
 ### Implementando
 
-1. Página com as informações do livro específico
-2. Procura de livros na página do livro
-3. Google Ads
+1. Responsividade
+2. Google Ads
