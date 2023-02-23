@@ -44,6 +44,14 @@ const useStyles = createStyles(() => ({
     info: {
         fontWeight: 'bold',
     },
+    bookInfo: {
+        display: 'flex',
+        gap: '10px',
+        alignItems: 'baseline',
+    },
+    load: {
+        height: '100%',
+    },
 }))
 
 export default useStyles
