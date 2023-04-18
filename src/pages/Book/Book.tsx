@@ -4,11 +4,11 @@ import useFetch from 'react-fetch-hook'
 import { BackgroundImage, Center, Grid, ScrollArea } from '@mantine/core'
 
 import { Header } from '@/components/header'
-import type { dataBook } from '@/types/books'
 import Loading from '@/assets/loading.svg'
 import Cover from '@/assets/bookimage.png'
+import type { dataBook } from '@/types/books'
 
-import useStyles from './book.styles'
+import useStyles from './Book.styles'
 
 function BookPage() {
     const location = useLocation()
@@ -32,18 +32,19 @@ function BookPage() {
                     <Grid className={classes.grid}>
                         <Grid.Col span={9}>
                             <h1>{data?.volumeInfo.title}</h1>
-                            <h2 className={classes.author}>{data?.volumeInfo.authors.join('<br />')}</h2>
+                            <h2 className={classes.author}>{data?.volumeInfo.authors.join(' ')}</h2>
                             <div className={classes.bookInfo}>
                                 <h3>{data?.volumeInfo.publisher}</h3>
-                                <h5>{data?.volumeInfo.categories.join(' / ')}</h5>
+                                {data?.volumeInfo.categories && <h5>{data?.volumeInfo.categories.join(' / ')}</h5>}
                             </div>
-                            <ScrollArea
+                            <ScrollArea.Autosize
+                                maxHeight={450}
                                 className={classes.description}
+                                type="hover"
                                 offsetScrollbars
-                                scrollbarSize={6}
-                                scrollHideDelay={500}>
-                                <p>{data?.volumeInfo.description?.replace(/<\/?[^>]+(>|$)/g, '')}</p>
-                            </ScrollArea>
+                                scrollbarSize={8}>
+                                {data?.volumeInfo.description?.replace(/<\/?[^>]+(>|$)/g, '')}
+                            </ScrollArea.Autosize>
                         </Grid.Col>
                         <Grid.Col span={3}>
                             {data?.volumeInfo.imageLinks ? (

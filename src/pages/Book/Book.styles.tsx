@@ -37,9 +37,7 @@ const useStyles = createStyles(() => ({
         fontSize: '1.3rem',
     },
     description: {
-        maxHeight: '35vh',
         minWidth: '35vw',
-        overflowY: 'scroll',
     },
     info: {
         fontWeight: 'bold',
