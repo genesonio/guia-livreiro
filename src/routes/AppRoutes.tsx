@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 
 import { SuspenseLoader } from '@/components/feedback/SuspenseLoader'
 import ResultsPage from '@/pages/Results/Results'
-import BookPage from '@/pages/Book/book'
+import BookPage from '@/pages/Book/Book'
 
 const HomePage = lazy(() => import('@/pages/Home/Home'))
 
