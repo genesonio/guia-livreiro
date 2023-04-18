@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core'
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles((theme) => ({
     grid: {
         margin: '0',
         height: '100vh',
@@ -14,12 +14,22 @@ const useStyles = createStyles(() => ({
         width: '5rem',
         height: '5rem',
         zIndex: 1,
+
+        [theme.fn.smallerThan('md')]: {
+            width: '100%',
+            height: '9rem',
+        },
     },
     title: {
         fontSize: '4rem',
         color: '#cdc0b0',
         zIndex: 1,
         textShadow: '6px 4px 4px rgba(000, 000, 000, 0.25)',
+        textAlign: 'center',
+
+        [theme.fn.smallerThan('md')]: {
+            fontSize: '2.5rem',
+        },
     },
     input: {
         width: '16rem',
@@ -43,6 +53,10 @@ const useStyles = createStyles(() => ({
         WebkitBackdropFilter: 'blur(8px)',
 
         border: '1px solid rgba(255, 255, 255, 0.1)',
+
+        [theme.fn.smallerThan('md')]: {
+            width: '90vw',
+        },
     },
 }))
 

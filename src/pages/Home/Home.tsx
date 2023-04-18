@@ -29,7 +29,7 @@ function HomePage() {
                         <>
                             <div className={classes.glass} />
                             <img src={Logo} alt="logo picture" className={classes.logo} />
-                            <Text ta="center" className={classes.title}>
+                            <Text className={classes.title}>
                                 Guia<strong>Livreiro</strong>
                             </Text>
 
