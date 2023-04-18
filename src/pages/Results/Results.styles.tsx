@@ -22,7 +22,7 @@ const useStyles = createStyles(() => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        height: '40vh',
+        minHeight: 'fit-content',
         textAlign: 'center',
     },
     grid: {

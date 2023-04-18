@@ -29,7 +29,7 @@ function ResultsPage() {
             className={classes.background}
             src="https://static-cse.canva.com/blob/921439/ImagebyStanislavKondratievviaUnsplash.35c0d8f7.avif">
             <Header />
-            <Grid className={classes.grid} columns={5}>
+            <Grid className={classes.grid}>
                 {isLoading ? (
                     <Center style={{ width: '100%', height: '70vh' }}>
                         <img src={loading} alt="loading animation" />
@@ -38,7 +38,7 @@ function ResultsPage() {
                     data?.items.map((dataBook, index) => {
                         const { volumeInfo: book } = dataBook
                         return (
-                            <Grid.Col key={index} className={classes.book} span={1}>
+                            <Grid.Col key={index} className={classes.book} lg={3} sm={12}>
                                 <div className={classes.glass} onClick={() => handleClick(dataBook.id)}>
                                     {book.imageLinks ? (
                                         <img
