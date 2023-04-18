@@ -1,6 +1,6 @@
 import { createStyles } from '@mantine/core'
 
-const useStyles = createStyles(() => ({
+const useStyles = createStyles((theme) => ({
     header: {
         height: '120px',
         display: 'flex',
@@ -12,9 +12,17 @@ const useStyles = createStyles(() => ({
     logo: {
         width: '6rem',
         cursor: 'pointer',
+
+        [theme.fn.smallerThan('md')]: {
+            width: '4rem',
+        },
     },
     input: {
         width: '20%',
+
+        [theme.fn.smallerThan('md')]: {
+            width: '60%',
+        },
     },
 }))
 
